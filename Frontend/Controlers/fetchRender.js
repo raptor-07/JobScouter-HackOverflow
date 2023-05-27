@@ -5,34 +5,36 @@ fileInput.addEventListener("change", async function (event) {
   console.log(typeof selectedFile, selectedFile); // Output: File object representing the selected PDF file
 });
 
-document.querySelector(".button-54").addEventListener("click", function (e) {
-  console.log("hello");
+document
+  .querySelector(".button-54")
+  .addEventListener("click", async function (e) {
+    console.log("hello");
 
-  const description = document.querySelector(".c-form__input").value;
-  console.log(description);
+    const description = document.querySelector(".c-form__input").value;
+    console.log(description);
 
-  const data = {
-    pdfFile: selectedFile,
-    description: description,
-  };
+    const data = {
+      pdfFile: selectedFile,
+      description: description,
+    };
 
-  const jsonData = JSON.stringify(data);
-  console.log(jsonData);
+    const jsonData = await JSON.stringify(data);
+    console.log(jsonData);
 
-  fetch("http://localhost:5000/BE1", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: jsonData,
-  })
-    .then((response) => {
-      return response.json();
+    await fetch("http://localhost:5000/BE1", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: jsonData,
     })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-});
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
