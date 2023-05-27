@@ -1,18 +1,14 @@
 //call rrapid api
 //store data
 
-const getData = require("./getdata");
-const format = require("./format");
-const writeFile = require("./filewrite");
+const getData = require("../Model/getData");
+const format = require("../Model/format");
+const writeFile = require("../Model/fileWrite");
 
-async function linkedinController(req, res) {
+async function linkedinController(req, res, next) {
   try {
-    const jobData = await getData();
-    const csvString = format(jobData);
-    await writeFile("job-data.csv", csvString);
-    res.setHeader("Content-Type", "text/csv");
-    res.setHeader("Content-Disposition", "attachment; filename=job-data.csv");
-    res.send(csvString);
+    console.log('linkedinController called');
+    next();
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal server error");

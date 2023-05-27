@@ -19,7 +19,8 @@ async function getData() {
   try {
     const response = await axios.request(options);
     console.log(response.data); // Log the response data
-    return response.data;
+    // return response.data;
+    console.log('getData called', response.data);
   } catch (error) {
     console.error(error);
   }
