@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+      </style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Scout</title>
     <link rel="stylesheet" href="index.css">
-    <script ></script>
+    <script src="./main.js"></script>
 </head> 
-<div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h3 class="head">JOB SCOUTER</h3>
-      </div>
-    </div>
-  </div>
-<body>
-     <br>
-        <br>
-            <br>
-    <div class="desc">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam id voluptate, omnis maiores numquam, dignissimos illo doloribus, iure dolor facere ex modi nemo doloremque commodi quos? Ipsam pariatur mollitia a.
+<body class="body">
+    <h3>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3 class="head">JOB SCOUTER</h3>
+          </div>
         </div>
-         <br>
-                <br>
-                        <br>
-                                <br>
-<div class="file">
-    <input type="file" id="fileInput">
-            </div>
-            <br>
-                <br>
-                    <br>
-                            <br>
-
-<div class="btn">
-    <button><span>Submit</span><img src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png" height="30"width="30"></button>
+      </div>
+    </h1>
+    <div class="typewriter">
+        <h1>Supercharge your job search with ResumeMatchmaker</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br> 
+    <div>
+    <form class="upload" action="upload.php" method="POST">
+        <input type="file">
+        <p>Drag your files here or click in this area.</p>
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+    <input class="c-checkbox" type="checkbox" id="checkbox">
+    <div class="c-formContainer">
+  <form class="c-form" action="">
+    <input class="c-form__input" placeholder="Decription" type="text" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
+    <label class="c-form__buttonLabel" for="checkbox">
+      <button class="c-form__button" type="button">Send</button>
+    </label>
+    <label class="c-form__toggle" for="checkbox" data-title="Add Description"></label>
+  </form>
+  </div>
 </div>
 <br>
-    <br>
-        <br>
-            <br>
-    <div class="text">
-        <textarea id="myTextarea" rows="4" cols="50" placeholder="Enter Job Description"></textarea>
-            </div>
-    </body>
+<br>
+<br>
+<br>
+<button class="button-54" role="button">Submit</button>
+</body>
+<script>
+    require("@south-paw/typeface-minecraft");
+</script>
 </html>
