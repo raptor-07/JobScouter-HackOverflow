@@ -10,6 +10,7 @@ document
       description: document.querySelector(".c-form__input").value,
     };
 
+    console.log(jsonData);
     fetch("/upload", {
       method: "POST",
       headers: {
