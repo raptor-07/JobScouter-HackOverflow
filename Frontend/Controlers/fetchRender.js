@@ -1,8 +1,8 @@
 let selectedFile;
 const fileInput = document.getElementById("pdfFileInput");
-fileInput.addEventListener("change", function (event) {
-  selectedFile = event.target.files[0];
-  console.log(selectedFile); // Output: File object representing the selected PDF file
+fileInput.addEventListener("change", async function (event) {
+  selectedFile = await event.target.files[0];
+  console.log(typeof selectedFile, selectedFile); // Output: File object representing the selected PDF file
 });
 
 document.querySelector(".button-54").addEventListener("click", function (e) {
