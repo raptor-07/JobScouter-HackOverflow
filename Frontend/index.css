@@ -1,0 +1,42 @@
+.head
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+
+    #3A0CA3 29%,
+    #7209B7 67%,
+    #F72585 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.desc{
+    text-align: center;
+    text-rendering: optimizeSpeed;
+    color: blueviolet;
+
+}
+header h1 {
+    font-size: 70px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
