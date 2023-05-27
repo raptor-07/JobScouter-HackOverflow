@@ -1,21 +1,30 @@
 const fileInput = document.getElementById("pdfFileInput");
-const file = fileInput.files[0];
 
-const formData = new FormData();
-formData.append("pdfFile", file);
+document
+  .querySelector(".c-form__button")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
 
-const search = document.querySelector(".c-form__button");
-console.log(search);
+    const formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+    formData.append(
+      "description",
+      document.querySelector(".c-form__input").value
+    );
 
-fetch("http://127.0.0.1:5000/BE1", {
-  method: "POST",
-  body: formData,
-})
-  .then((response) => {
-    // Handle response from the backend
-  })
-  .catch((error) => {
-    // Handle error
+    console.log("Form data:", formData);
+
+    fetch("/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   });
-
-document.querySelector(".button-54").addEventListener("click", function (e) {});
