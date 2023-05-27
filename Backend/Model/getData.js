@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-async function getData() {
+async function getData(searchTerm) {
   const options = {
     method: "GET",
     url: "https://jsearch.p.rapidapi.com/search",
@@ -17,9 +17,7 @@ async function getData() {
 
   try {
     const response = await axios.request(options);
-    console.log(response.data); // Log the response data
-    // return response.data;
-    console.log("getData called", response.data);
+    return response;
   } catch (error) {
     console.error(error);
   }
