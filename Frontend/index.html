@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Scout</title>
     <link rel="stylesheet" href="index.css">
-    <script src="./main.js"></script>
+    
+
 </head> 
 <body class="body">
     <h3>
@@ -28,8 +29,8 @@
     <br>
     <br> 
     <div>
-    <form class="upload" action="upload.php" method="POST">
-        <input type="file">
+    <form class="upload" >
+        <input type="file" id="pdfFileInput" accept=".pdf">
         <p>Drag your files here or click in this area.</p>
         <button type="submit">Upload</button>
       </form>
@@ -55,9 +56,8 @@
 <br>
 <br>
 <br>
-<button class="button-54" role="button">Submit</button>
+
 </body>
-<script>
-    require("@south-paw/typeface-minecraft");
-</script>
+<script src="./Controlers/fetchRender.js"></script>
+<script src="./main.js"></script>
 </html>
