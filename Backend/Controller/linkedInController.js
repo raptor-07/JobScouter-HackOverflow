@@ -2,12 +2,11 @@
 //store data
 
 const getData = require("../Model/getData");
-const format = require("../Model/format");
 const writeFile = require("../Model/fileWrite");
 
 async function linkedinController(req, res, next) {
   try {
-    console.log('linkedinController called');
+    console.log("linkedinController called");
     next();
   } catch (error) {
     console.error(error);
