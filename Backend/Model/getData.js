@@ -1,5 +1,3 @@
-//fetch data from Api
-import axios from "axios";
 const axios = require("axios");
 
 async function getData() {
@@ -20,6 +18,7 @@ async function getData() {
 
   try {
     const response = await axios.request(options);
+    console.log(response.data); // Log the response data
     return response.data;
   } catch (error) {
     console.error(error);
