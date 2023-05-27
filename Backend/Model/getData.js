@@ -1,4 +1,5 @@
 //fetch data from Api
+import axios from "axios";
 const axios = require("axios");
 
 async function getData() {
