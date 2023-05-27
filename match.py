@@ -36,8 +36,8 @@ def match_pdf_to_paragraphs(pdf_file, paragraphs):
 def main():
     # Your code here to generate or retrieve the list of elements
     
-    pdf_file_path = '/content/ULLAS U.pdf'
-    with open('/content/text.json', 'r') as f:
+    pdf_file_path = 'Rezume1.pdf'
+    with open('text.json', 'r', encoding='utf-8') as f:
         json_data = json.load(f)
 
     data = json_data['data']
@@ -52,6 +52,7 @@ def main():
 
 if __name__ == '__main__':
     result = main()
+    print(result)
     
 
 
