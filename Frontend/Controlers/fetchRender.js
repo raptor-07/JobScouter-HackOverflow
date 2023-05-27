@@ -11,7 +11,7 @@ document
     };
 
     console.log(jsonData);
-    fetch("/upload", {
+    fetch(" http://localhost:5000/BE1", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
