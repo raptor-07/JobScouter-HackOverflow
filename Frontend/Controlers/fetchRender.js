@@ -5,18 +5,17 @@ document
   .addEventListener("click", function (e) {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("file", fileInput.files[0]);
-    formData.append(
-      "description",
-      document.querySelector(".c-form__input").value
-    );
-
-    console.log("Form data:", formData);
+    const jsonData = {
+      file: fileInput.files[0],
+      description: document.querySelector(".c-form__input").value,
+    };
 
     fetch("/upload", {
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jsonData),
     })
       .then((response) => {
         return response.json();
