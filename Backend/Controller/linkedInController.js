@@ -1,12 +1,10 @@
 const fs = require("fs");
-const ogdata = fs.readFile("../order.json", "utf8", (err, data) => {
-  if (err) {
-    console.log(err);
-  }
-});
+const ogdata = require("./order.json");
+console.log(ogdata);
+
 //call rrapid api
 //store data
-const pyScript = require("../pyScript");
+// const pyScript = require("../pyScript");
 const getData = require("../Model/getData");
 
 async function linkedinController(req, res) {
@@ -23,14 +21,14 @@ async function linkedinController(req, res) {
 
     const filePath = "./data.json";
 
-    fs.writeFile(filePath, JSON.stringify(data), (err) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
+    // fs.writeFile(filePath, JSON.stringify(data), (err) => {
+    //   if (err) {
+    //     console.error(err);
+    //     return;
+    //   }
 
-      console.log(`JSON data saved to ${filePath}`);
-    });
+    //   console.log(`JSON data saved to ${filePath}`);
+    // });
     res.status(200).send(
       JSON.stringify({
         message: "Data saved to data.json",
