@@ -27,5 +27,4 @@ function render(apiData) {
 
 }
 
-module.exports =
-    render;
+

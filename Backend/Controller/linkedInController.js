@@ -1,6 +1,9 @@
 const fs = require("fs");
-const data = JSON.parse(fs.readFileSync("../order.json", "utf8"));
-
+const ogdata = fs.readFile("../order.json", "utf8", (err, data) => {
+  if (err) {
+    console.log(err);
+  }
+});
 //call rrapid api
 //store data
 const pyScript = require("../pyScript");
@@ -31,7 +34,7 @@ async function linkedinController(req, res) {
     res.status(200).send(
       JSON.stringify({
         message: "Data saved to data.json",
-        data: data
+        data: ogdata,
       })
     );
   } catch (error) {
