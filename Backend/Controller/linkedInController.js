@@ -1,4 +1,5 @@
 const fs = require("fs");
+const data = JSON.parse(fs.readFileSync("../order.json", "utf8"));
 
 //call rrapid api
 //store data
@@ -27,6 +28,12 @@ async function linkedinController(req, res) {
 
       console.log(`JSON data saved to ${filePath}`);
     });
+    res.status(200).send(
+      JSON.stringify({
+        message: "Data saved to data.json",
+        data: data
+      })
+    );
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal server error");

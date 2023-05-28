@@ -1,4 +1,5 @@
 let selectedFile;
+const renderer = require("../Models/render");
 const fileInput = document.getElementById("pdfFileInput");
 fileInput.addEventListener("change", async function (event) {
   selectedFile = await event.target.files[0];
@@ -29,6 +30,9 @@ document
       body: jsonData,
     })
       .then((response) => {
+        console.log('response: ', response);
+        renderer(response);
+        
         return response.json();
       })
       .then((data) => {
