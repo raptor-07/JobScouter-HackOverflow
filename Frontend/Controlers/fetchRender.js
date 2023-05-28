@@ -45,30 +45,40 @@ document
 
   //To get the description and details from backend
 function render(apiData) {
-    var bodyElement = document.body;
-    bodyElement.innerHTML = "";
 
+  let body = document.querySelector("body");
+  body.innerHTML = "";
+  // Initialize a variable to store the concatenated HTML
+  
+  apiData.forEach(job => {
+    const { jobDescription, companyName, location, jobType } = job; // Destructure the properties from the job object
+    
     const template= `<div class="widget">
-    <h1>Job Description</h1>
-    <p>${job}</p>
+      <h1>Job Description</h1>
+      <p>${jobDescription}</p>
+      
+      <div class="CTA">
+        <h2>Company Name</h2>
+        <p>${companyName}</p>
+      
+        <h2>Location</h2>
+        <p>${location}</p>
+      
+        <h2>Job Type</h2>
+        <p>${jobType}</p>
+      
+        <h2>Accuracy</h2>
+        <p class="value" count=${count}>0</p>
+      
+        <a href="apply.html" class="apply-btn">Apply Now</a>
+      </div>
+    </div>`;
     
-    <div class="CTA">
-      <h2>Company Name</h2>
-    <p>${as}</p>
-    
-    <h2>Location</h2>
-    <p>${as}</p>
-    
-    <h2>Job Type</h2>
-    <p>${asd}</p>
-    
-    <h2>Accuracy</h2>
-    <p class="value" count=${count}>0</p>
-    
-    <a href="apply.html" class="apply-btn">Apply Now</a>
-    </div>
-    </div>`
-    document.getElementsByClassName('body') = "${template}";
+    body += template; // Concatenate the template with the existing HTML
+  });
+  
+  console.log(body); // Output the final concatenated HTML
+  
 
 }
 
