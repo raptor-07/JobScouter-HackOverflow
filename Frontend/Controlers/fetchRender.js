@@ -30,7 +30,8 @@ document
       body: jsonData,
     })
       .then((response) => {
-        console.log("response: ", response);
+        console.log("response: ", response, typeof response.data);
+
         render(response);
 
         return response.json();
@@ -48,28 +49,36 @@ function render(apiData) {
   let body = document.querySelector("body");
   body.innerHTML = "";
   // Initialize a variable to store the concatenated HTML
+  console.log(typeof apiData);
 
   apiData.forEach((job) => {
-    const { jobDescription, companyName, location, jobType } = job; // Destructure the properties from the job object
+    const {
+      job_description,
+      employer_name,
+      job_country,
+      job_employment_type,
+      job_apply_link,
+      similarity_score,
+    } = job; // Destructure the properties from the job object
 
     const template = `<div class="widget">
       <h1>Job Description</h1>
-      <p>${jobDescription}</p>
+      <p>${job_description}</p>
       
       <div class="CTA">
         <h2>Company Name</h2>
-        <p>${companyName}</p>
+        <p>${employer_name}</p>
       
         <h2>Location</h2>
-        <p>${location}</p>
+        <p>${job_country}</p>
       
         <h2>Job Type</h2>
-        <p>${jobType}</p>
+        <p>${job_employment_type}</p>
       
         <h2>Accuracy</h2>
-        <p class="value" count=${count}>0</p>
+        <p class="value" count=${similarity_score}>0</p>
       
-        <a href="apply.html" class="apply-btn">Apply Now</a>
+        <a href=${job_apply_link} class="apply-btn">Apply Now</a>
       </div>
     </div>`;
 
