@@ -29,3 +29,10 @@ Despite these obstacles, we conducted research, sought guidance, and applied pro
 
 
 ![WhatsApp Image 2023-05-28 at 09 13 13](https://github.com/raptor-07/JobScouter-HackOverflow/assets/70244799/885b70df-1aa2-4402-b568-a545aed3e4d0)
+
+# demo of the product
+
+
+
+https://github.com/raptor-07/JobScouter-HackOverflow/assets/70244799/abce409a-9988-4e50-8d5c-beb3eff4a92a
+
